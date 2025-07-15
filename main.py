@@ -6,14 +6,14 @@ from ollama_client import generate_student_summary
 
 app = FastAPI()
 
+# ✅ Updated CORS for Render frontend domain
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Or use ["*"] for all origins
+    allow_origins=["https://student-frontend-94qt.onrender.com"],  # <-- your deployed frontend
     allow_credentials=True,
-    allow_methods=["*"],  # This allows OPTIONS, GET, POST, PUT, DELETE
+    allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 @app.post("/students", response_model=Student)
 def create_student(student: StudentCreate):
