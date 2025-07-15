@@ -1,4 +1,4 @@
-﻿absl-py==2.1.0
+absl-py==2.1.0
 altair==5.5.0
 annotated-types==0.7.0
 anyio==4.8.0
@@ -117,8 +117,6 @@ python-dateutil==2.9.0.post0
 python-json-logger==3.2.1
 python-slugify==8.0.4
 pytz==2025.2
-pywin32==308; sys_platform == "win32"
-pywinpty==2.0.15
 PyYAML==6.0.2
 pyzmq==26.2.1
 referencing==0.36.2
