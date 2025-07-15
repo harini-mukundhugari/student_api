@@ -70,7 +70,6 @@ jupyterlab_pygments==0.3.0
 jupyterlab_server==2.27.3
 jupyterlab_widgets==3.0.14
 kaggle==1.7.4.2
-keras==3.9.2
 kiwisolver==1.4.8
 libclang==18.1.1
 Markdown==3.7
@@ -140,11 +139,6 @@ stack-data==0.6.3
 starlette==0.47.1
 streamlit==1.45.1
 tenacity==9.1.2
-tensorboard==2.18.0
-tensorboard-data-server==0.7.2
-tensorflow==2.18.0
-tensorflow-io-gcs-filesystem==0.31.0
-tensorflow_intel==2.18.0
 termcolor==2.5.0
 terminado==0.18.1
 text-unidecode==1.3
