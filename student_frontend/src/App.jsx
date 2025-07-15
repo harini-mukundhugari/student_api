@@ -72,7 +72,7 @@ function App() {
 
   return (
     <div className="p-6 max-w-2xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">FealtyX - Student Manager</h1>
+      <h1 className="text-2xl font-bold mb-4">Student Manager</h1>
 
       <form onSubmit={handleSubmit} className="space-y-2 mb-6">
         <input name="name" value={form.name} onChange={handleChange} placeholder="Name" required className="border p-2 w-full" />
