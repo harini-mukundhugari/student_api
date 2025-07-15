@@ -6,8 +6,11 @@ function App() {
   const [summaries, setSummaries] = useState({});
   const [editId, setEditId] = useState(null);  // ✅ Track if we're editing
 
+  // 🔗 Use deployed backend URL
+  const BASE_URL = 'https://student-api-ns50.onrender.com';
+
   const fetchStudents = async () => {
-    const res = await fetch('http://localhost:8000/students');
+    const res = await fetch(`${BASE_URL}/students`);
     const data = await res.json();
     setStudents(data);
   };
@@ -22,14 +25,14 @@ function App() {
 
     if (editId === null) {
       // Create student
-      await fetch('http://localhost:8000/students', {
+      await fetch(`${BASE_URL}/students`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
     } else {
       // Update student
-      await fetch(`http://localhost:8000/students/${editId}`, {
+      await fetch(`${BASE_URL}/students/${editId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -42,13 +45,13 @@ function App() {
   };
 
   const deleteStudent = async (id) => {
-    await fetch(`http://localhost:8000/students/${id}`, { method: 'DELETE' });
+    await fetch(`${BASE_URL}/students/${id}`, { method: 'DELETE' });
     fetchStudents();
   };
 
   const fetchSummary = async (id) => {
     if (summaries[id]) return;
-    const res = await fetch(`http://localhost:8000/students/${id}/summary`);
+    const res = await fetch(`${BASE_URL}/students/${id}/summary`);
     const data = await res.json();
     setSummaries(prev => ({ ...prev, [id]: data.summary }));
   };
