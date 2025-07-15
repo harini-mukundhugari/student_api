@@ -49,5 +49,9 @@ def get_summary(student_id: int):
     student = db.get_by_id(student_id)
     if student is None:
         raise HTTPException(status_code=404, detail="Student not found")
-    summary = generate_student_summary(student)
-    return {"summary": summary}
+    
+    # ✅ Return mock summary
+    return {
+        "summary": f"{student.name} is {student.age} years old and can be contacted at {student.email}."
+    }
+
